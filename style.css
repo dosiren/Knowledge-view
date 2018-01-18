@@ -37,3 +37,6 @@ a:link,a:hover,a:visited{
   font-size: 30px;
   cursor: pointer;
 }
+input{
+  color: black;
+}
