@@ -1,31 +1,51 @@
 //getCSV();
 
+//セルの値が正常かどうか判断する
+function check_value(result){
+  for(var i = 0;i < input.length;i++){
+    for(var j = 0;j < input[i].length;j++){
+        switch (j){
+        case 1:
+          alert("1");
+          break;
+        case 2:
+          alert("2");
+          break;
+        case 3:
+          alert("3");
+          break;
+        case 4:
+          alert("4");
+          break;
+        }
+    }
+  }
+}
+
+
+
 //CSVの内容をHTMLで表示させます
 function view_CSV(result){
 
-
 //TABLEIDを取得
 var elm_table           = document.getElementById('table');
-//elm_table.style.cssText = 'width:200;height:100';
+//elm_table.style.cssText = 'width:20;height:20';
 
 //HTMLFormElement FormIDを取得
 var form = document.getElementById("id_form2");
 
 
-
 // HTMLInputElement オブジェクトを作成する
 var input = new Array(4);
-
 for (var i = 0; i < input.length; i++){
         input[i] = new Array(4);
 }
-
 for (var i = 0; i < input.length;i++){
-	for(var j = 0;j < 4;j++){
+	for(var j = 0;j < input[i].length;j++){
 		input[i][j] = document.createElement("input");
-		input[i][j].type = "number";
-		input[i][j].size = 2;
-		//input[i][j].max = 2;
+		input[i][j].type = "Number";
+		input[i][j].style.width = 50;
+		//input[i][j].maxLength = 2;
 		input[i][j].name = "data" + String(i) + String(j);
 		input[i][j].valueAsNumber = result[i+1][j+1];
 	}
@@ -41,7 +61,6 @@ for(var i = 0;i < result[0].length;i++){
   header.innerText = result[0][i];
   header.style.border = '1 solid #000';
 }
-alert(result);
 
 for(var i = 0; i < input.length; i ++) {
   o_row[i+1] = elm_table.insertRow();
@@ -51,7 +70,7 @@ for(var i = 0; i < input.length; i ++) {
 	lesson.style.border = '1 solid #000';
 
 
-  var start_cell          = o_row[i+1].insertCell();
+  	var start_cell          = o_row[i+1].insertCell();
 	start_cell.innerText    = ("時間");
 	start_cell.append(input[i][0]);
 	start_cell.append("時");
@@ -65,27 +84,23 @@ for(var i = 0; i < input.length; i ++) {
 	end_cell.append("時");
 	end_cell.append(input[i][3]);
 	end_cell.append('分');
-  	end_cell.style.border = '1 solid #000';
+  end_cell.style.border = '1 solid #000';
 }
 
   alert("セル作成終了");
 }
 
 
-
-
 //CSVファイルを読み込む関数getCSV()の定義
 function getCSV(){
     var req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRre$
     req.open("get", "data.csv", true); // アクセスするファイルを指定
+
     req.send(null); // HTTPリクエストの発行
 
-
-
     // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ
-
     req.onload = function(){
-          convertCSVtoArray(req.responseText); // 渡されるのは読 $
+        convertCSVtoArray(req.responseText); // 渡されるのは読 $
     }
 }
 
@@ -98,7 +113,6 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
     for(var i=0;i<tmp.length;++i){
         result[i] = tmp[i].split(',');
     }
-
 
     view_CSV(result);
 }
