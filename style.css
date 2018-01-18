@@ -4,6 +4,10 @@
   font-family: "Noto Sans JP", sans-serif;
 
 }
+
+body {
+  background-color: white;
+}
 .gradation{
   width: 100vw;
   height: 100vh;
@@ -15,7 +19,7 @@
   display: flex;
 }
 #main{
-  margin-left: 50px;
+  margin:0 50px;
   color: black;
 }
 h1{
@@ -25,6 +29,7 @@ h1{
     cursor: default;
     -webkit-text-stroke:.5px #dcdcdc;
     color:white;
+    background-color: gray;
 }
 h2{
   font-size: 40px;
@@ -50,4 +55,15 @@ a:link,a:hover,a:visited{
   margin-top: 50px;
   font-size: 30px;
   cursor: pointer;
+}
+
+.blackboard-img {
+  width: 25%;
+  height: 200px;
+  margin: 0;
+  object-fit: cover;
+}
+.blackboard-img:hover {
+  filter:alpha(opacity=50);
+  opacity:0.5;
 }
