@@ -1,9 +1,5 @@
 $(document).ready(function() {
-    $("#top").hide();
-        $("#title").fadeIn().queue(function() {
-            setTimeout(function(){$("#title").dequeue();
-          }, 1000);
-        });
-        $("#title").fadeOut();
-        $("#top").fadeIn();
+  $("#main").hide();
+  jQuery("#title").delay(1000).fadeOut(500);
+  jQuery("#main").delay(1500).fadeIn(500);
 });
