@@ -1,5 +1,5 @@
 $(document).ready(function() {
   $("#main").hide();
-  jQuery("#title").delay(1000).fadeOut(500);
-  jQuery("#main").delay(1500).fadeIn(500);
+  jQuery("#title").delay(2000).fadeOut(500);
+  jQuery("#main").delay(2500).fadeIn(500);
 });
