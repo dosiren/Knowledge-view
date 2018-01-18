@@ -4,7 +4,7 @@ body{
   font-family: "Noto Sans JP", sans-serif;
 }
 #main{
-  margin-left: 100px;
+  margin: 0 100px;
   color: rgb(217, 217, 217);
 }
 h1{
@@ -33,10 +33,21 @@ a:link,a:hover,a:visited{
   padding-left: 30px;
 }
 .back{
-  margin-top: 50px;
+  margin-top: 10px;
   font-size: 30px;
   cursor: pointer;
 }
 input{
   color: black;
+}
+
+.blackboard-img {
+  width: 25%;
+  height: 200px;
+  margin: 0;
+  object-fit: cover;
+}
+.blackboard-img:hover {
+  filter:alpha(opacity=50);
+  opacity:0.5;
 }
