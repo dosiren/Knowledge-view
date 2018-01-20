@@ -13,12 +13,19 @@ body {
   margin:0 50px;
   color: black;
 }
-h1{
+a:link,a:hover,a:visited{
+  font-size: 40px;
+  text-decoration: none;
+  -webkit-text-stroke:.3px gray;
+  color:black;
+}
+
+h1 > a:link, h1 > a:visited, h1 > a.hover{
     /*font-family: 'Nixie One', cursive;*/
     font-family: 'Heebo', sans-serif;
     font-size: 70px;
     cursor: default;
-    -webkit-text-stroke:.5px gray;
+    text-shadow:0px 0px 3px gray;
     color:white;
 }
 h2{
@@ -33,11 +40,7 @@ li{
   font-size: 30px;
   cursor: pointer;
 }
-a:link,a:hover,a:visited{
-  text-decoration: none;
-  -webkit-text-stroke:.3px gray;
-  color:white;
-}
+
 .main{
   padding-left: 30px;
 }
