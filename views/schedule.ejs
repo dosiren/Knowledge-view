@@ -22,9 +22,12 @@
     <div id="main">
 		    <h1><a href="/">Knowledge</a></h1>
 				<h2>Schedule</h2>
-        <caption>時間割指定</caption>
+        <div style="background-color: rgba(255,255,255,0.5)">
+          <h3>ここでは時間割指定ができます</h3>
+          <p class="main">表示ボタンで現在の設定，送信ボタンで新しい時間割に更新ができます．</p>
+        </div>
         <form action="csv" method="POST" target"_blank" onsubmit="doSomething();return false;">
-          <input type="button" value="再表示" onclick="onButtonClick();" />
+          <input type="button" value="表示" onclick="onButtonClick();" />
           <input type="submit" value="送信"  />
 
           <table class="table3" border=1 id = "table">
