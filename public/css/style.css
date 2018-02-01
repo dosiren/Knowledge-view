@@ -51,9 +51,10 @@ li{
 }
 
 .blackboard-img {
-  width: 25%;
+  width: 33%;
   height: 200px;
   margin: 0;
+  border: 1px solid white;
   object-fit: cover;
 }
 .blackboard-img:hover {
